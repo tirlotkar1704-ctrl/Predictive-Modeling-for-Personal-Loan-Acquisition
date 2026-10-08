@@ -40,7 +40,7 @@ All insights below are re-derived from the data inside the notebook (Section 11)
 
 ### 4. Predictive Modeling & Campaign Targeting
 * Constructed a leakage-guarded feature matrix, explicitly excluding row identifiers (`ID`), nominal codes (`ZIP Code`), collinear duplicates (`Experience`, r = 0.994 with `Age`), and all engineered labels derived from the target.
-* Trained and cross-validated three classifiers (Logistic Regression, Decision Tree, Random Forest) using stratified 5-fold validation on a training partition, with `class_weight='balanced'` to address the 15.6:1 class imbalance.
+* Trained and cross-validated three classifiers (Logistic Regression, Decision Tree, Random Forest) using stratified 5-fold validation on a training partition, with `class_weight='balanced'` to address the 9.4:1 class imbalance.
 * Evaluated on a held-out 25% test partition using precision, recall, F1, ROC-AUC and PR-AUC. Accuracy is reported but deliberately de-emphasised — a naive "predict nobody converts" classifier scores 90.4% while identifying zero prospects.
 * Translated model scores into an operational targeting rule via a decision-threshold sweep and score-decile lift analysis.
 
